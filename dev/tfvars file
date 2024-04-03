@@ -1,1 +1,14 @@
+ami_id                 = 
+resource_env           = "DEV"
+instance_type          = "t2.micro"
+security_groups        = "test-SG"
+Owner_number           = "12345"
+bucket_name            = "test_s3bucket"
+cidr_block             = 10.0.0.0/16
+public_subnets         = public1, public2
+private_subnets        = private1, private2
+vpc_id                 = 
+availability_zones     = us-east-1a, us-east-1b
+eip_domain             =
+nat_gateway_subnet_id  =
 
