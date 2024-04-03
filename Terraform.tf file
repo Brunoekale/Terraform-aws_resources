@@ -23,4 +23,5 @@ Modules ("create_s3_bucket" "bucket_name" {
   internet_gateway  = var.internet_gateway
   gateway_id        = var.gateway_id
   route_table       = var.route_table
+  aws_route         = var.aws_route
 }
