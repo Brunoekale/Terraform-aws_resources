@@ -13,16 +13,14 @@ Modules ("create_s3_bucket" "bucket_name" {
  bucket_name = var.bucket_name
 
 # Terraform codes to create VPC
-Modules ("create_vpc" "my-test_vpc" {
-source = " ./Modules/vpc" }
-cidr_block = var.cidr
-public_subnets = var.public_subnets
-cidr_block        = var.public_subnets[count.index]
-private_subnets = var.private_subnets
-cidr_block        = var.public__cidr_block
-cidr_block        = var.private__cidr_block
-vpc_id = var.vpc_id
-availability_zone = var.availability_zones[count.index]
-internet_gateway = var.internet_gateway
-internet_gateway_id = var.gateway_id
- 
+'module "my_test_vpc" {
+  source = "./Modules/vpc"
+  cidr_block        = var.cidr
+  public_subnets    = var.public_subnets
+  private_subnets   = var.private_subnets
+  vpc_id            = var.vpc_id
+  availability_zones = var.availability_zones
+  internet_gateway  = var.internet_gateway
+  gateway_id        = var.gateway_id
+  route_table       = var.route_table
+}
