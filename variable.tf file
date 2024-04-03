@@ -14,6 +14,12 @@ description  = "Please enter instance type"
 type         = string
 } 
 
+variable "aws.security_groups"
+description  = "Enter list if Security Groups"
+type         = list(string)
+# default     = "test-SG"
+}
+
 # variables for S3 bucket
 variable "s3_bucket" {
 description  = "Please enter bucket name"
@@ -60,6 +66,12 @@ variable "private_cidr_blocks" {
   description = "Enter CIDR Blocks for private subnets"
   type        = list(string)
   default     = ["10.0.3.0/24", "10.0.4.0/24"]  # Adjust as needed
+} 
+
+variable "eip_domain" {
+description   = "Domain for the Elastic IP"
+type        = string
+# default     = "vpc"
 }
 
 # RESOURCE DEFINITIONS
@@ -79,3 +91,4 @@ resource "aws_route_table_association" "test-RTA" {
 # Enter configuration for route table association
 }
 
+resource 
