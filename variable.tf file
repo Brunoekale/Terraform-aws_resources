@@ -69,10 +69,15 @@ variable "private_cidr_blocks" {
 } 
 
 variable "eip_domain" {
-description   = "Domain for the Elastic IP"
-type        = string
+description   = "Enter Domain for the Elastic IP"
+type          = string
 # default     = "vpc"
-}
+} 
+
+vriable "nat_gateway" {
+description   = "Enter Subnet ID NAT Gateway"
+type          = string
+
 
 # RESOURCE DEFINITIONS
 resource "aws_internet_gateway" "test-IGW" {
