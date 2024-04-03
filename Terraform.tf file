@@ -26,5 +26,5 @@ Modules ("create_s3_bucket" "bucket_name" {
   aws_route         = var.aws_route
   route_table_association = var.aws_route_table_association
   eip_domain        = var.eip_domain
-  nat_gateway       = var.nat_gateway
+  nat_gateway       = var.nat_gateway_subnet_id
 }
