@@ -7,17 +7,17 @@ variable "cidr" {
 
 # VARIABLES FOR SUBNETS
 variable "public_subnets" {
-  description = "A list of public subnets inside the VPC"
+  description = "Enter list of public subnets inside the VPC"
   type        = list(string)
 }
 
 variable "private_subnets" {
-  description = "A list of private subnets inside the VPC"
+  description = "Enter list of private subnets inside the VPC"
   type        = list(string)
 }
 
 variable "availability_zones" {
-  description = "List of availability zones for subnets"
+  description = "Enter List of availability zones for subnets"
   type        = list(string)
   default     = ["us-west-1a", "us-west-1b"]  # Adjust as needed for your desired AZs
 }
@@ -28,26 +28,31 @@ variable "vpc_id" {
 }
 
 variable "public_cidr_blocks" {
-  description = "CIDR Blocks for public subnets"
+  description = "Enter CIDR Blocks for public subnets"
   type        = list(string)
   default     = ["10.0.1.0/24", "10.0.2.0/24"]  # Adjust as needed
 }
 
 variable "private_cidr_blocks" {
-  description = "CIDR Blocks for private subnets"
+  description = "Enter CIDR Blocks for private subnets"
   type        = list(string)
   default     = ["10.0.3.0/24", "10.0.4.0/24"]  # Adjust as needed
 }
 
 # RESOURCE DEFINITIONS
 resource "aws_internet_gateway" "test-IGW" {
-description    =  "Enter configuration for internet gateway"
+# Enter configuration for internet gateway
 }
 
 resource "aws_route_table" "test-RT" {
-description    = "Enter configuration for route table"
+# Enter configuration for route table
 }
 
 resource "aws_route" "internet_gateway" {
-description    = "Enter configuration for route to internet gateway"
+# Enter configuration for route to internet gateway
 }
+
+resource "aws_route_table_association" "test-RTA" {
+# Enter configuration for route table association
+}
+
