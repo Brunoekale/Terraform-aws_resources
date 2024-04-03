@@ -1,30 +1,26 @@
-# Terraform codes to create ec2 instance
-modules ("create_ec2_instance" "webserver {
-source ="./modules/ec2" }
-ami_id = var.iam_id
-resource_env = var.resource_env
-instance_type = var.instance_type
-owner_number = 121344
-security_groups = var.security_groups
+# Terraform codes to create EC2 instance
+module "webserver" {
+  source          = "./modules/ec2"
+  ami_id          = var.ami_id
+  resource_env    = var.resource_env
+  instance_type   = var.instance_type
+  security_groups = var.security_groups
+}
 
 # Terraform codes to create S3 bucket
-Modules ("create_s3_bucket" "bucket_name" {
- source ="./modules/s3" }                                                                                                   
- bucket_name = var.bucket_name
+module "bucket_name" {
+  source      = "./modules/s3"
+  bucket_name = var.bucket_name
+}
 
 # Terraform codes to create VPC
-'module "my_test_vpc" {
-  source = "./Modules/vpc"
-  cidr_block        = var.cidr
-  public_subnets    = var.public_subnets
-  private_subnets   = var.private_subnets
-  vpc_id            = var.vpc_id
-  availability_zones = var.availability_zones
-  internet_gateway  = var.aws_internet_gateway
-  gateway_id        = var.aws_gateway_id
-  route_table       = var.aws_route_table
-  aws_route         = var.aws_route
-  route_table_association = var.aws_route_table_association
-  eip_domain        = var.eip_domain
-  nat_gateway       = var.nat_gateway_subnet_id
+module "my_test_vpc" {
+  source                 = "./Modules/vpc"
+  cidr_block             = var.cidr
+  public_subnets         = var.public_subnets
+  private_subnets        = var.private_subnets
+  vpc_id                 = var.vpc_id
+  availability_zones     = var.availability_zones
+  eip_domain             = var.eip_domain
+  nat_gateway_subnet_id  = var.nat_gateway_subnet_id
 }
