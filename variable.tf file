@@ -1,8 +1,31 @@
+# VARIABLE FOR EC2 INSTANCE
+variable "ami_id" {
+descriptionn   = Please enter ami id for ec2 instance
+type           = string
+}
+
+variable "resource_env" {
+description  = "Please enter resource env name"
+type         = string
+}
+                                                       
+variable "instance_type" {
+description  = "Please enter instance type"
+type         = string
+} 
+
+# variables for S3 bucket
+variable "s3_bucket" {
+description  = "Please enter bucket name"
+type         = string
+}
+
+
 # VARIABLE FOR VPC
 variable "cidr" {
-  description = "Please enter CIDR block for VPC"
-  type        = string
-  # default     = "10.0.0.0/16"
+description = "Please enter CIDR block for VPC"
+type        = string
+# default     = "10.0.0.0/16"
 }
 
 # VARIABLES FOR SUBNETS
