@@ -41,13 +41,13 @@ variable "private_cidr_blocks" {
 
 # RESOURCE DEFINITIONS
 resource "aws_internet_gateway" "test-IGW" {
-  # Enter configuration for internet gateway
+description    =  "Enter configuration for internet gateway"
 }
 
 resource "aws_route_table" "test-RT" {
-  # Enter configuration for route table
+description    = "Enter configuration for route table"
 }
 
 resource "aws_route" "internet_gateway" {
-  # Enter configuration for route to internet gateway
+description    = "Enter configuration for route to internet gateway"
 }
