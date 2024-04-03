@@ -20,10 +20,11 @@ Modules ("create_s3_bucket" "bucket_name" {
   private_subnets   = var.private_subnets
   vpc_id            = var.vpc_id
   availability_zones = var.availability_zones
-  internet_gateway  = var.internet_gateway
-  gateway_id        = var.gateway_id
-  route_table       = var.route_table
+  internet_gateway  = var.aws_internet_gateway
+  gateway_id        = var.aws_gateway_id
+  route_table       = var.aws_route_table
   aws_route         = var.aws_route
-  route_table_association = var.route_table_association
+  route_table_association = var.aws_route_table_association
   eip_domain        = var.eip_domain
+  nat_gateway       = var.nat_gateway
 }
