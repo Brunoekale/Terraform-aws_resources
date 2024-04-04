@@ -80,17 +80,27 @@ variable "nat_gateway_subnet_id" {
 
 # RESOURCE DEFINITIONS
 resource "aws_internet_gateway" "test-IGW" {
-  # Enter configuration for internet gateway
+  vpc_id      = var.vpc_id
+  description = "Internet Gateway for VPC ${var.vpc_id}"
 }
 
 resource "aws_route_table" "test-RT" {
-  # Enter configuration for route table
+  vpc_id      = var.vpc_id
+  description = "Route Table for VPC ${var.vpc_id}"
 }
 
 resource "aws_route" "internet_gateway" {
-  # Enter configuration for route to internet gateway
+  route_table_id         = aws_route_table.test-RT.id
+  destination_cidr_block = "0.0.0.0/0"
+  gateway_id             = aws_internet_gateway.test-IGW.id
+  description            = "Route to Internet Gateway"
 }
 
 resource "aws_route_table_association" "test-RTA" {
-  # Enter configuration for route table association
+  subnet_id      = var.public_subnets[0] // Example: Assuming the first public subnet
+  route_table_id = aws_route_table.test-RT.id
+  description    = "Associating public subnet with route table"
 }
+
+
+
