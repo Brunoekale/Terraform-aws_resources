@@ -24,3 +24,4 @@ module "my_test_vpc" {
   eip_domain             = var.eip_domain
   nat_gateway_subnet_id  = var.nat_gateway_subnet_id
 }
+
