@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"bucket_name","Source":"./modules/s3","Dir":""},{"Key":"my_test_vpc","Source":"./Modules/vpc","Dir":""},{"Key":"webserver","Source":"./modules/ec2","Dir":""}]}

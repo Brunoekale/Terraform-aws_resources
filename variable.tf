@@ -83,7 +83,7 @@ resource "aws_internet_gateway" "test-IGW" {
   # Enter configuration for internet gateway
 }
 
-resource "aws_route_table" "test-RT" {
+resource "aws_route_table" "test-RT"  {
   # Enter configuration for route table
 }
 
